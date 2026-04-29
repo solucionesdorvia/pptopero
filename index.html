@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OPERO — Sistema de Gestión de Incidencias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top progress bar -->
+  <div class="progress-track" aria-hidden="true">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Slide counter top right -->
+  <div class="counter">
+    <span class="counter-label">SLIDE</span>
+    <span id="counterCurrent">01</span>
+    <span class="counter-divider">/</span>
+    <span id="counterTotal">10</span>
+  </div>
+
+  <!-- Top header (slide kicker) -->
+  <div class="top-header">
+    <span class="brand-dot"></span>
+    <span class="th-num" id="topHeaderNum">01</span>
+    <span class="th-divider">·</span>
+    <span class="th-kicker" id="topHeaderKicker">Portada</span>
+  </div>
+
+  <!-- Slides container -->
+  <main class="deck" id="deck">
+
+    <!-- ========= SLIDE 01 — PORTADA ========= -->
+    <section class="slide is-active" data-slide="1" data-tone="gold" data-kicker="Portada">
+      <div class="glow glow-gold-1"></div>
+      <div class="glow glow-gold-2"></div>
+
+      <div class="slide-inner cover">
+        <div class="cover-logo">
+          <div class="cover-logo-ring">
+            <span class="cover-logo-mark" aria-label="OPERO logo"></span>
+          </div>
+        </div>
+
+        <div class="cover-eyebrow">
+          <span class="dash"></span>
+          <span class="label">Desarrollo de Aplicaciones I · 2026</span>
+          <span class="dash"></span>
+        </div>
+
+        <h1 class="cover-title">OPERO</h1>
+
+        <p class="cover-subtitle">
+          Sistema de Gestión de <em>Incidencias</em>
+        </p>
+
+        <div class="cover-meta">
+          <span class="meta-item">
+            <span class="meta-key">Stack</span>
+            <span class="meta-val">Spring Boot · PostgreSQL · JWT</span>
+          </span>
+          <span class="meta-sep"></span>
+          <span class="meta-item">
+            <span class="meta-key">Patrón</span>
+            <span class="meta-val">MVC 4 capas</span>
+          </span>
+          <span class="meta-sep"></span>
+          <span class="meta-item">
+            <span class="meta-key">Metodología</span>
+            <span class="meta-val">Scrum</span>
+          </span>
+          <span class="meta-sep"></span>
+          <span class="meta-item">
+            <span class="meta-key">Entregables</span>
+            <span class="meta-val">Figma · DER · Swagger · Arquitectura</span>
+          </span>
+        </div>
+
+        <div class="cover-team">
+          <span class="team-label">Equipo</span>
+          <span class="team-line">
+            <span>Tobias Choclin</span>
+            <span class="team-bullet">·</span>
+            <span>Valentín Doroszuk Visillac</span>
+            <span class="team-bullet">·</span>
+            <span>Marcos Romero Victorica</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SLIDE 02 — INTRODUCCIÓN ========= -->
+    <section class="slide" data-slide="2" data-tone="blue" data-kicker="Introducción">
+      <div class="glow glow-blue-1"></div>
+      <div class="glow glow-blue-2"></div>
+
+      <div class="slide-inner two-col intro">
+
+        <div class="intro-grid">
+          <div class="intro-left">
+            <h2 class="display-h">
+              Una plataforma <em>mobile-first</em><br />
+              para resolver lo que <em>se rompe</em>.
+            </h2>
+            <p class="lead">
+              Plataforma para la gestión de incidencias en instituciones
+              universitarias. Permite reportar problemas y gestionarlos en
+              tiempo real, con trazabilidad completa del flujo.
+            </p>
+
+            <div class="stats-row">
+              <div class="stat">
+                <span class="stat-num">3</span>
+                <span class="stat-label">Tipos de usuario</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">25<span class="stat-plus">+</span></span>
+                <span class="stat-label">Endpoints REST</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">4</span>
+                <span class="stat-label">Capas MVC</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="intro-right">
+            <div class="phone-stack">
+              <div class="phone phone-back" data-screen="dashboard">
+                <div class="phone-screen">
+                  <div class="phone-status"></div>
+                  <div class="phone-title-bar"></div>
+                  <div class="phone-row tall"></div>
+                  <div class="phone-grid">
+                    <div></div><div></div><div></div><div></div>
+                  </div>
+                  <div class="phone-row"></div>
+                  <div class="phone-row short"></div>
+                </div>
+              </div>
+              <div class="phone phone-mid" data-screen="list">
+                <div class="phone-screen">
+                  <div class="phone-status"></div>
+                  <div class="phone-search"></div>
+                  <div class="phone-card-row"></div>
+                  <div class="phone-card-row"></div>
+                  <div class="phone-card-row"></div>
+                  <div class="phone-card-row"></div>
+                </div>
+              </div>
+              <div class="phone phone-front" data-screen="detail">
+                <div class="phone-screen">
+                  <div class="phone-status"></div>
+                  <div class="phone-hero"></div>
+                  <div class="phone-row"></div>
+                  <div class="phone-row short"></div>
+                  <div class="phone-row"></div>
+                  <div class="phone-cta"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SLIDE 03 — PROBLEMÁTICA ========= -->
+    <section class="slide" data-slide="3" data-tone="red" data-kicker="Problemática">
+      <div class="glow glow-red-1"></div>
+      <div class="glow glow-red-2"></div>
+
+      <div class="slide-inner problema">
+
+        <h2 class="display-h center">
+          La gestión actual está <em>fragmentada</em>.
+        </h2>
+
+        <div class="problem-grid">
+          <article class="problem-card">
+            <div class="problem-num">01</div>
+            <h3>Reporte manual<br />e informal</h3>
+            <p>
+              WhatsApp, mails, planillas. Se pierde información y no hay
+              estándar para describir problemas.
+            </p>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-num">02</div>
+            <h3>Sin seguimiento<br />en tiempo real</h3>
+            <p>
+              El alumno reporta y queda en el aire. No sabe quién atiende ni
+              cuánto demora la resolución.
+            </p>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-num">03</div>
+            <h3>Coordinación<br />ineficiente</h3>
+            <p>
+              No hay forma clara de asignar, derivar o priorizar tareas entre
+              departamentos y equipos de mantenimiento.
+            </p>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-num">04</div>
+            <h3>Sin datos<br />para gestión</h3>
+            <p>
+              No existen métricas ni historial agregado para tomar decisiones
+              de mantenimiento y mejora continua.
+            </p>
+          </article>
+        </div>
+
+        <div class="solution-bar">
+          <span class="sol-label">Solución</span>
+          <span class="sol-text">
+            <strong>OPERO</strong> centraliza todo el flujo:
+            <span class="sol-step">reporte</span>
+            <span class="sol-arrow">→</span>
+            <span class="sol-step">asignación</span>
+            <span class="sol-arrow">→</span>
+            <span class="sol-step">seguimiento</span>
+            <span class="sol-arrow">→</span>
+            <span class="sol-step">resolución</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SLIDE 04 — ORGANIZACIÓN / SCRUM ========= -->
+    <section class="slide" data-slide="4" data-tone="blue" data-kicker="Organización · Scrum">
+      <div class="glow glow-blue-1"></div>
+      <div class="glow glow-gold-2"></div>
+
+      <div class="slide-inner two-col scrum">
+
+        <div class="scrum-grid">
+          <div class="scrum-left">
+            <h3 class="block-title">
+              <span class="block-tag">Sprints</span>
+              Tres iteraciones, un producto.
+            </h3>
+
+            <ol class="timeline">
+              <li class="tl-item">
+                <span class="tl-marker">S1</span>
+                <div class="tl-body">
+                  <span class="tl-name">Fundamentos</span>
+                  <span class="tl-desc">Auth · DB · Arquitectura</span>
+                </div>
+              </li>
+              <li class="tl-item">
+                <span class="tl-marker">S2</span>
+                <div class="tl-body">
+                  <span class="tl-name">Core</span>
+                  <span class="tl-desc">CRUD · Roles · Departamentos</span>
+                </div>
+              </li>
+              <li class="tl-item">
+                <span class="tl-marker">S3</span>
+                <div class="tl-body">
+                  <span class="tl-name">Pulido</span>
+                  <span class="tl-desc">Swagger · Testing · Figma</span>
+                </div>
+              </li>
+            </ol>
+
+            <div class="ceremonies">
+              <span class="cer-label">Ceremonias</span>
+              <div class="cer-row">
+                <span class="cer">Daily</span>
+                <span class="cer">Planning</span>
+                <span class="cer">Review</span>
+                <span class="cer">Retro</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="scrum-right">
+            <h3 class="block-title">
+              <span class="block-tag">Roles</span>
+              Equipo de tres.
+            </h3>
+
+            <div class="role-stack">
+              <article class="role-card">
+                <div class="role-avatar">TC</div>
+                <div class="role-info">
+                  <span class="role-tag">Product Owner</span>
+                  <span class="role-name">Tobias Choclin</span>
+                </div>
+              </article>
+              <article class="role-card">
+                <div class="role-avatar">VD</div>
+                <div class="role-info">
+                  <span class="role-tag">Scrum Master · Dev</span>
+                  <span class="role-name">Valentín Doroszuk Visillac</span>
+                </div>
+              </article>
+              <article class="role-card">
+                <div class="role-avatar">MR</div>
+                <div class="role-info">
+                  <span class="role-tag">Developer</span>
+                  <span class="role-name">Marcos Romero Victorica</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="tools-row">
+              <span class="tools-label">Stack de equipo</span>
+              <div class="chip-row">
+                <span class="chip">GitHub</span>
+                <span class="chip">Figma</span>
+                <span class="chip">Postman</span>
+                <span class="chip">IntelliJ</span>
+                <span class="chip">Discord</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SLIDE 05 — ARQUITECTURA MVC ========= -->
+    <section class="slide" data-slide="5" data-tone="gold" data-kicker="Arquitectura · MVC en capas">
+      <div class="glow glow-gold-1"></div>
+      <div class="glow glow-blue-2"></div>
+
+      <div class="slide-inner two-col arch">
+
+        <div class="arch-grid">
+          <div class="arch-left">
+            <h3 class="block-title">
+              <span class="block-tag">Capas</span>
+              Una request, cinco fronteras.
+            </h3>
+
+            <ul class="layer-stack">
+              <li class="layer layer-client">
+                <span class="layer-tag">Cliente</span>
+                <span class="layer-name">App Mobile</span>
+                <span class="layer-desc">UI nativa, llama HTTP</span>
+              </li>
+              <li class="layer-arrow">↓</li>
+              <li class="layer">
+                <span class="layer-tag">Controller</span>
+                <span class="layer-name">@RestController</span>
+                <span class="layer-desc">Recibe HTTP, delega al Service, devuelve JSON</span>
+              </li>
+              <li class="layer-arrow">↓</li>
+              <li class="layer">
+                <span class="layer-tag">Service</span>
+                <span class="layer-name">@Service</span>
+                <span class="layer-desc">Lógica de negocio, validaciones, JWT</span>
+              </li>
+              <li class="layer-arrow">↓</li>
+              <li class="layer">
+                <span class="layer-tag">Repository</span>
+                <span class="layer-name">@Repository</span>
+                <span class="layer-desc">JPA, queries, transacciones</span>
+              </li>
+              <li class="layer-arrow">↓</li>
+              <li class="layer">
+                <span class="layer-tag">Entity</span>
+                <span class="layer-name">@Entity</span>
+                <span class="layer-desc">Mapea tablas de BD</span>
+              </li>
+              <li class="layer-arrow">↓</li>
+              <li class="layer layer-db">
+                <span class="layer-tag">Database</span>
+                <span class="layer-name">PostgreSQL</span>
+                <span class="layer-desc">Persistencia relacional</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-right">
+            <h3 class="block-title">
+              <span class="block-tag">Ejemplo</span>
+              POST /api/incidents en vivo.
+            </h3>
+
+            <pre class="code-block"><code><span class="c-method post">POST</span> <span class="c-path">/api/incidents</span>
+<span class="c-arrow">→</span> <span class="c-cls">IncidentController</span> <span class="c-com">(valida token)</span>
+<span class="c-arrow">→</span> <span class="c-cls">IncidentService</span> <span class="c-com">(valida datos + asigna depto)</span>
+<span class="c-arrow">→</span> <span class="c-cls">IncidentRepository</span> <span class="c-com">(guarda con JPA)</span>
+<span class="c-status ok">201 Created</span> <span class="c-com">+ JSON</span></code></pre>
+
+            <div class="stack-chips">
+              <span class="stack-chip-label">Stack técnico</span>
+              <div class="chip-row">
+                <span class="chip chip-gold">Spring Boot 3</span>
+                <span class="chip chip-gold">Spring Security</span>
+                <span class="chip chip-gold">JPA / Hibernate</span>
+                <span class="chip chip-gold">PostgreSQL</span>
+                <span class="chip chip-gold">JWT</span>
+                <span class="chip chip-gold">BCrypt</span>
+                <span class="chip chip-gold">Swagger</span>
+                <span class="chip chip-gold">Maven</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SLIDE 06 — JWT ========= -->
+    <section class="slide" data-slide="6" data-tone="violet" data-kicker="Autenticación · JWT">
+      <div class="glow glow-violet-1"></div>
+      <div class="glow glow-violet-2"></div>
+
+      <div class="slide-inner jwt">
+
+        <div class="jwt-flow">
+          <div class="flow-step"><span class="fs-num">01</span><span class="fs-name">Login</span></div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">02</span><span class="fs-name">Validar<small>BCrypt</small></span></div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">03</span><span class="fs-name">Generar JWT</span></div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">04</span><span class="fs-name">Request<small>Bearer</small></span></div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">05</span><span class="fs-name">Filter<small>valida firma</small></span></div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">06</span><span class="fs-name">Autorizar<small>por rol</small></span></div>
+        </div>
+
+        <div class="jwt-grid">
+          <div class="jwt-left">
+            <h3 class="block-title">
+              <span class="block-tag">Roles</span>
+              Tres niveles de acceso.
+            </h3>
+
+            <article class="jwt-role">
+              <div class="jwt-role-head">
+                <span class="role-pill role-user">USER</span>
+                <span class="role-sub">Alumno · Docente</span>
+              </div>
+              <ul>
+                <li>Crear incidentes</li>
+                <li>Ver solo los propios</li>
+                <li>Historial personal</li>
+              </ul>
+            </article>
+
+            <article class="jwt-role">
+              <div class="jwt-role-head">
+                <span class="role-pill role-worker">WORKER</span>
+                <span class="role-sub">Mantenimiento</span>
+              </div>
+              <ul>
+                <li>Ver tareas asignadas</li>
+                <li>Cambiar estado <em>(iniciar / finalizar)</em></li>
+              </ul>
+            </article>
+
+            <article class="jwt-role">
+              <div class="jwt-role-head">
+                <span class="role-pill role-manager">MANAGER</span>
+                <span class="role-sub">Gerente</span>
+              </div>
+              <ul>
+                <li>Gestión completa</li>
+                <li>Asignar workers · Derivar dpto.</li>
+                <li>Ver todos los incidentes</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="jwt-right">
+            <h3 class="block-title">
+              <span class="block-tag">SecurityConfig</span>
+              Reglas de acceso.
+            </h3>
+
+            <div class="sec-table">
+              <div class="sec-row sec-head">
+                <span>Endpoint</span><span>Acceso</span>
+              </div>
+              <div class="sec-row">
+                <span class="sec-path">/api/auth/login</span>
+                <span class="sec-tag sec-public">Público</span>
+              </div>
+              <div class="sec-row">
+                <span class="sec-path">/api/auth/register</span>
+                <span class="sec-tag sec-public">Público</span>
+              </div>
+              <div class="sec-row">
+                <span class="sec-path">/api/incidents/**</span>
+                <span class="sec-tag sec-locked">🔒 Token</span>
+              </div>
+              <div class="sec-row">
+                <span class="sec-path">/api/users/**</span>
+                <span class="sec-tag sec-locked">🔒 Token</span>
+              </div>
+              <div class="sec-row">
+                <span class="sec-path">/api/departments/**</span>
+                <span class="sec-tag sec-locked">🔒 Token</span>
+              </div>
+            </div>
+
+            <pre class="code-block code-error"><code><span class="c-method delete">DELETE</span> <span class="c-path">/api/incidents/5</span>
+<span class="c-arrow">→</span> token: <span class="c-cls">STUDENT</span> role
+<span class="c-arrow">→</span> Filter: token válido <span class="c-ok">✓</span>
+<span class="c-arrow">→</span> SecurityConfig: rol insuficiente
+<span class="c-status err">403 Forbidden</span> <span class="c-fail">✗</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SLIDE 07 — SWAGGER / OPENAPI ========= -->
+    <section class="slide" data-slide="7" data-tone="blue" data-kicker="Swagger · OpenAPI">
+      <div class="glow glow-blue-1"></div>
+      <div class="glow glow-gold-1"></div>
+
+      <div class="slide-inner swagger">
+
+        <div class="swagger-grid">
+          <article class="swg-panel">
+            <header class="swg-head">
+              <span class="swg-title">Auth</span>
+              <span class="swg-count">3</span>
+            </header>
+            <ul class="endpoints">
+              <li><span class="m post">POST</span><span class="path">/auth/login</span></li>
+              <li><span class="m post">POST</span><span class="path">/auth/register</span></li>
+              <li><span class="m get">GET</span><span class="path">/auth/me</span><span class="lock">🔒</span></li>
+            </ul>
+          </article>
+
+          <article class="swg-panel">
+            <header class="swg-head">
+              <span class="swg-title">Incidents</span>
+              <span class="swg-count">10</span>
+            </header>
+            <ul class="endpoints">
+              <li><span class="m post">POST</span><span class="path">/incidents</span><span class="lock">🔒</span></li>
+              <li><span class="m get">GET</span><span class="path">/incidents</span><span class="lock">🔒</span></li>
+              <li><span class="m get">GET</span><span class="path">/incidents/{id}</span><span class="lock">🔒</span></li>
+              <li><span class="m put">PUT</span><span class="path">/incidents/{id}</span><span class="lock">🔒</span></li>
+              <li><span class="m delete">DELETE</span><span class="path">/incidents/{id}</span><span class="lock">🔒</span></li>
+              <li><span class="m patch">PATCH</span><span class="path">/incidents/{id}/status</span><span class="lock">🔒</span></li>
+              <li><span class="m patch">PATCH</span><span class="path">/incidents/{id}/assign</span><span class="lock">🔒</span></li>
+              <li><span class="m patch">PATCH</span><span class="path">/incidents/{id}/priority</span><span class="lock">🔒</span></li>
+              <li><span class="m patch">PATCH</span><span class="path">/incidents/{id}/department</span><span class="lock">🔒</span></li>
+              <li><span class="m get">GET</span><span class="path">/incidents/{id}/history</span><span class="lock">🔒</span></li>
+            </ul>
+          </article>
+
+          <article class="swg-panel">
+            <header class="swg-head">
+              <span class="swg-title">Users</span>
+              <span class="swg-count">6</span>
+            </header>
+            <ul class="endpoints">
+              <li><span class="m get">GET</span><span class="path">/users/me</span><span class="lock">🔒</span></li>
+              <li><span class="m put">PUT</span><span class="path">/users/me</span><span class="lock">🔒</span></li>
+              <li><span class="m get">GET</span><span class="path">/users</span><span class="lock">🔒</span></li>
+              <li><span class="m get">GET</span><span class="path">/users/{id}</span><span class="lock">🔒</span></li>
+              <li><span class="m put">PUT</span><span class="path">/users/{id}</span><span class="lock">🔒</span></li>
+              <li><span class="m delete">DELETE</span><span class="path">/users/{id}</span><span class="lock">🔒</span></li>
+            </ul>
+          </article>
+
+          <article class="swg-panel">
+            <header class="swg-head">
+              <span class="swg-title">Departments</span>
+              <span class="swg-count">3</span>
+            </header>
+            <ul class="endpoints">
+              <li><span class="m get">GET</span><span class="path">/departments</span><span class="lock">🔒</span></li>
+              <li><span class="m get">GET</span><span class="path">/departments/{id}</span><span class="lock">🔒</span></li>
+              <li><span class="m put">PUT</span><span class="path">/departments/{id}</span><span class="lock">🔒</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="swg-summary">
+          <div class="swg-sum-cell">
+            <span class="swg-sum-num">25</span>
+            <span class="swg-sum-lbl">Total endpoints</span>
+          </div>
+          <span class="swg-sum-sep"></span>
+          <div class="swg-sum-cell">
+            <span class="swg-sum-num">3</span>
+            <span class="swg-sum-lbl">Públicos</span>
+          </div>
+          <span class="swg-sum-sep"></span>
+          <div class="swg-sum-cell">
+            <span class="swg-sum-num">22</span>
+            <span class="swg-sum-lbl">Con JWT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SLIDE 08 — MANUAL DE MARCA ========= -->
+    <section class="slide" data-slide="8" data-tone="gold" data-kicker="Manual de marca">
+      <div class="glow glow-gold-1"></div>
+      <div class="glow glow-gold-2"></div>
+
+      <div class="slide-inner brand">
+
+        <div class="brand-row">
+          <div class="brand-logo-block">
+            <div class="cover-logo-ring small">
+              <span class="cover-logo-mark" aria-label="OPERO logo"></span>
+            </div>
+            <div class="brand-logo-text">
+              <h2 class="brand-name">OPERO</h2>
+              <span class="brand-tagline">Sistema de Gestión de Incidencias</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-grid">
+          <div class="brand-row-grid">
+            <div class="brand-section fondos">
+              <span class="block-tag">Fondos</span>
+              <div class="swatch-row">
+                <div class="swatch" style="--c:#070E1A"><span class="hex">#070E1A</span><span class="role">bg-low</span></div>
+                <div class="swatch" style="--c:#0C1521"><span class="hex">#0C1521</span><span class="role">bg</span></div>
+                <div class="swatch" style="--c:#141F2E"><span class="hex">#141F2E</span><span class="role">surface</span></div>
+                <div class="swatch" style="--c:#243448"><span class="hex">#243448</span><span class="role">surface-high</span></div>
+              </div>
+            </div>
+
+            <div class="brand-section primario">
+              <span class="block-tag">Primario · Dorado</span>
+              <div class="swatch-row">
+                <div class="swatch" style="--c:#9A8A5C"><span class="hex">#9A8A5C</span><span class="role">primary-dim</span></div>
+                <div class="swatch" style="--c:#BBA978"><span class="hex">#BBA978</span><span class="role">primary</span></div>
+                <div class="swatch" style="--c:#D4BA88"><span class="hex">#D4BA88</span><span class="role">on-primary-c</span></div>
+              </div>
+            </div>
+
+            <div class="brand-section acentos">
+              <span class="block-tag">Acentos</span>
+              <div class="swatch-row">
+                <div class="swatch" style="--c:#6B94AA"><span class="hex">#6B94AA</span><span class="role">secondary</span></div>
+                <div class="swatch" style="--c:#8878C0"><span class="hex">#8878C0</span><span class="role">tertiary</span></div>
+                <div class="swatch" style="--c:#B06060"><span class="hex">#B06060</span><span class="role">error</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="brand-section type-section">
+            <span class="block-tag">Tipografía</span>
+            <div class="type-row">
+              <div class="type-card">
+                <span class="type-sample" style="font-family:'Cormorant Garamond',serif;font-style:italic;">Aa</span>
+                <div class="type-info">
+                  <span class="type-name">Cormorant Garamond</span>
+                  <span class="type-use">Display · Titulares</span>
+                </div>
+              </div>
+              <div class="type-card">
+                <span class="type-sample" style="font-family:'Outfit',sans-serif;font-weight:400;">Aa</span>
+                <div class="type-info">
+                  <span class="type-name">Outfit 400</span>
+                  <span class="type-use">Body · Lectura</span>
+                </div>
+              </div>
+              <div class="type-card">
+                <span class="type-sample" style="font-family:'DM Mono',monospace;">Aa</span>
+                <div class="type-info">
+                  <span class="type-name">DM Mono</span>
+                  <span class="type-use">Mono · Labels</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SLIDE 09 — FIGMA ========= -->
+    <section class="slide" data-slide="9" data-tone="blue" data-kicker="Figma · Diseño UI/UX">
+      <div class="glow glow-blue-1"></div>
+      <div class="glow glow-violet-2"></div>
+
+      <div class="slide-inner two-col figma">
+
+        <div class="figma-grid">
+          <div class="figma-left">
+            <h3 class="block-title">
+              <span class="block-tag">Pantallas</span>
+              Mobile-first end to end.
+            </h3>
+
+            <div class="phone-grid-8">
+              <div class="phone mini" data-screen="login">
+                <div class="phone-screen">
+                  <div class="phone-status"></div>
+                  <div class="phone-logo-ph"></div>
+                  <div class="phone-input"></div>
+                  <div class="phone-input"></div>
+                  <div class="phone-cta"></div>
+                </div>
+                <span class="phone-label">Login</span>
+              </div>
+              <div class="phone mini" data-screen="home">
+                <div class="phone-screen">
+                  <div class="phone-status"></div>
+                  <div class="phone-title-bar"></div>
+                  <div class="phone-grid"><div></div><div></div><div></div><div></div></div>
+                  <div class="phone-row"></div>
+                </div>
+                <span class="phone-label">Home</span>
+              </div>
+              <div class="phone mini" data-screen="incidents">
+                <div class="phone-screen">
+                  <div class="phone-status"></div>
+                  <div class="phone-search"></div>
+                  <div class="phone-card-row"></div>
+                  <div class="phone-card-row"></div>
+                  <div class="phone-card-row"></div>
+                </div>
+                <span class="phone-label">Incidents</span>
+              </div>
+              <div class="phone mini" data-screen="dashboard">
+                <div class="phone-screen">
+                  <div class="phone-status"></div>
+                  <div class="phone-hero"></div>
+                  <div class="phone-grid"><div></div><div></div></div>
+                  <div class="phone-row"></div>
+                </div>
+                <span class="phone-label">Dashboard</span>
+              </div>
+              <div class="phone mini" data-screen="detail">
+                <div class="phone-screen">
+                  <div class="phone-status"></div>
+                  <div class="phone-hero"></div>
+                  <div class="phone-row"></div>
+                  <div class="phone-row short"></div>
+                  <div class="phone-cta"></div>
+                </div>
+                <span class="phone-label">Detail</span>
+              </div>
+              <div class="phone mini" data-screen="qr">
+                <div class="phone-screen">
+                  <div class="phone-status"></div>
+                  <div class="phone-qr"></div>
+                  <div class="phone-row short"></div>
+                </div>
+                <span class="phone-label">Scan QR</span>
+              </div>
+              <div class="phone mini" data-screen="profile">
+                <div class="phone-screen">
+                  <div class="phone-status"></div>
+                  <div class="phone-avatar"></div>
+                  <div class="phone-row"></div>
+                  <div class="phone-row short"></div>
+                  <div class="phone-row"></div>
+                </div>
+                <span class="phone-label">Profile</span>
+              </div>
+              <div class="phone mini" data-screen="notif">
+                <div class="phone-screen">
+                  <div class="phone-status"></div>
+                  <div class="phone-title-bar"></div>
+                  <div class="phone-card-row"></div>
+                  <div class="phone-card-row"></div>
+                  <div class="phone-card-row"></div>
+                </div>
+                <span class="phone-label">Notifications</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="figma-right">
+            <div class="feat-row">
+              <article class="feat-card">
+                <div class="feat-icon">◧</div>
+                <h4>Design System propio</h4>
+                <p>Tokens, componentes y estilos consistentes en toda la app.</p>
+              </article>
+              <article class="feat-card">
+                <div class="feat-icon">◉</div>
+                <h4>Prototipos clickeables</h4>
+                <p>Flujos navegables para validación con stakeholders.</p>
+              </article>
+              <article class="feat-card">
+                <div class="feat-icon">◎</div>
+                <h4>3 vistas de usuario</h4>
+                <p>Una experiencia adaptada a cada rol.</p>
+              </article>
+            </div>
+
+            <div class="flow-cards">
+              <article class="flow-card flow-user">
+                <span class="flow-tag">USER</span>
+                <span class="flow-steps">
+                  Onboarding → Login → Crear incidente → Mis incidencias → Detalle → Perfil
+                </span>
+              </article>
+              <article class="flow-card flow-worker">
+                <span class="flow-tag">WORKER</span>
+                <span class="flow-steps">
+                  Login → Tareas asignadas → Iniciar → Finalizar → Historial
+                </span>
+              </article>
+              <article class="flow-card flow-manager">
+                <span class="flow-tag">MANAGER</span>
+                <span class="flow-steps">
+                  Dashboard → Asignar → Prioridad → Derivar → Mi equipo → Config. depto.
+                </span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SLIDE 10 — CIERRE ========= -->
+    <section class="slide" data-slide="10" data-tone="gold" data-kicker="Cierre">
+      <div class="glow glow-gold-1"></div>
+      <div class="glow glow-gold-2"></div>
+
+      <div class="slide-inner closing">
+        <div class="closing-eyebrow">
+          <span class="dash"></span>
+          <span class="label">Gracias por la atención</span>
+          <span class="dash"></span>
+        </div>
+
+        <h1 class="cover-title closing-title">OPERO</h1>
+
+        <p class="closing-sub">
+          Reportá, asigná y resolvé — <em>todo en un lugar.</em>
+        </p>
+
+        <div class="link-pills">
+          <a class="pill" href="#" target="_blank" rel="noopener">
+            <span class="pill-dot"></span>Figma
+          </a>
+          <a class="pill" href="#" target="_blank" rel="noopener">
+            <span class="pill-dot"></span>Swagger
+          </a>
+          <a class="pill" href="#" target="_blank" rel="noopener">
+            <span class="pill-dot"></span>DER
+          </a>
+          <a class="pill" href="#" target="_blank" rel="noopener">
+            <span class="pill-dot"></span>Plan de Pruebas
+          </a>
+        </div>
+
+        <p class="closing-q"><em>¿Preguntas?</em></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom navigation -->
+  <nav class="navbar" aria-label="Navegación de slides">
+    <button class="nav-btn" id="prevBtn" aria-label="Anterior">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M15 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="dots" id="dots"></div>
+
+    <button class="nav-btn" id="nextBtn" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Noise SVG (referenced from CSS) -->
+  <svg class="svg-defs" aria-hidden="true">
+    <defs>
+      <filter id="noise-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+        <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <script src="main.js"></script>
+</body>
+</html>
