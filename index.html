@@ -133,38 +133,9 @@
 
           <div class="intro-right">
             <div class="phone-stack">
-              <div class="phone phone-back" data-screen="dashboard">
-                <div class="phone-screen">
-                  <div class="phone-status"></div>
-                  <div class="phone-title-bar"></div>
-                  <div class="phone-row tall"></div>
-                  <div class="phone-grid">
-                    <div></div><div></div><div></div><div></div>
-                  </div>
-                  <div class="phone-row"></div>
-                  <div class="phone-row short"></div>
-                </div>
-              </div>
-              <div class="phone phone-mid" data-screen="list">
-                <div class="phone-screen">
-                  <div class="phone-status"></div>
-                  <div class="phone-search"></div>
-                  <div class="phone-card-row"></div>
-                  <div class="phone-card-row"></div>
-                  <div class="phone-card-row"></div>
-                  <div class="phone-card-row"></div>
-                </div>
-              </div>
-              <div class="phone phone-front" data-screen="detail">
-                <div class="phone-screen">
-                  <div class="phone-status"></div>
-                  <div class="phone-hero"></div>
-                  <div class="phone-row"></div>
-                  <div class="phone-row short"></div>
-                  <div class="phone-row"></div>
-                  <div class="phone-cta"></div>
-                </div>
-              </div>
+              <img class="phone-stack-img phone-back" src="./assets/screen-dashboard.png" alt="Dashboard" loading="lazy" />
+              <img class="phone-stack-img phone-mid" src="./assets/screen-incidents.png" alt="Incidencias" loading="lazy" />
+              <img class="phone-stack-img phone-front" src="./assets/screen-home.png" alt="Home" loading="lazy" />
             </div>
           </div>
         </div>
@@ -700,82 +671,38 @@
             </h3>
 
             <div class="phone-grid-8">
-              <div class="phone mini" data-screen="login">
-                <div class="phone-screen">
-                  <div class="phone-status"></div>
-                  <div class="phone-logo-ph"></div>
-                  <div class="phone-input"></div>
-                  <div class="phone-input"></div>
-                  <div class="phone-cta"></div>
-                </div>
-                <span class="phone-label">Login</span>
-              </div>
-              <div class="phone mini" data-screen="home">
-                <div class="phone-screen">
-                  <div class="phone-status"></div>
-                  <div class="phone-title-bar"></div>
-                  <div class="phone-grid"><div></div><div></div><div></div><div></div></div>
-                  <div class="phone-row"></div>
-                </div>
-                <span class="phone-label">Home</span>
-              </div>
-              <div class="phone mini" data-screen="incidents">
-                <div class="phone-screen">
-                  <div class="phone-status"></div>
-                  <div class="phone-search"></div>
-                  <div class="phone-card-row"></div>
-                  <div class="phone-card-row"></div>
-                  <div class="phone-card-row"></div>
-                </div>
-                <span class="phone-label">Incidents</span>
-              </div>
-              <div class="phone mini" data-screen="dashboard">
-                <div class="phone-screen">
-                  <div class="phone-status"></div>
-                  <div class="phone-hero"></div>
-                  <div class="phone-grid"><div></div><div></div></div>
-                  <div class="phone-row"></div>
-                </div>
-                <span class="phone-label">Dashboard</span>
-              </div>
-              <div class="phone mini" data-screen="detail">
-                <div class="phone-screen">
-                  <div class="phone-status"></div>
-                  <div class="phone-hero"></div>
-                  <div class="phone-row"></div>
-                  <div class="phone-row short"></div>
-                  <div class="phone-cta"></div>
-                </div>
-                <span class="phone-label">Detail</span>
-              </div>
-              <div class="phone mini" data-screen="qr">
-                <div class="phone-screen">
-                  <div class="phone-status"></div>
-                  <div class="phone-qr"></div>
-                  <div class="phone-row short"></div>
-                </div>
-                <span class="phone-label">Scan QR</span>
-              </div>
-              <div class="phone mini" data-screen="profile">
-                <div class="phone-screen">
-                  <div class="phone-status"></div>
-                  <div class="phone-avatar"></div>
-                  <div class="phone-row"></div>
-                  <div class="phone-row short"></div>
-                  <div class="phone-row"></div>
-                </div>
-                <span class="phone-label">Profile</span>
-              </div>
-              <div class="phone mini" data-screen="notif">
-                <div class="phone-screen">
-                  <div class="phone-status"></div>
-                  <div class="phone-title-bar"></div>
-                  <div class="phone-card-row"></div>
-                  <div class="phone-card-row"></div>
-                  <div class="phone-card-row"></div>
-                </div>
-                <span class="phone-label">Notifications</span>
-              </div>
+              <figure class="phone-shot">
+                <img src="./assets/screen-login.png" alt="Pantalla de login" loading="lazy" />
+                <figcaption class="phone-label">Login</figcaption>
+              </figure>
+              <figure class="phone-shot">
+                <img src="./assets/screen-home.png" alt="Pantalla home" loading="lazy" />
+                <figcaption class="phone-label">Home</figcaption>
+              </figure>
+              <figure class="phone-shot">
+                <img src="./assets/screen-incidents.png" alt="Mis incidencias" loading="lazy" />
+                <figcaption class="phone-label">Incidents</figcaption>
+              </figure>
+              <figure class="phone-shot">
+                <img src="./assets/screen-dashboard.png" alt="Panel de control" loading="lazy" />
+                <figcaption class="phone-label">Dashboard</figcaption>
+              </figure>
+              <figure class="phone-shot">
+                <img src="./assets/screen-detail.png" alt="Detalle de incidencia" loading="lazy" />
+                <figcaption class="phone-label">Detail</figcaption>
+              </figure>
+              <figure class="phone-shot">
+                <img src="./assets/screen-qr.png" alt="Escanear QR del aula" loading="lazy" />
+                <figcaption class="phone-label">Scan QR</figcaption>
+              </figure>
+              <figure class="phone-shot">
+                <img src="./assets/screen-profile.png" alt="Perfil de usuario" loading="lazy" />
+                <figcaption class="phone-label">Profile</figcaption>
+              </figure>
+              <figure class="phone-shot">
+                <img src="./assets/screen-notifications.png" alt="Centro de notificaciones" loading="lazy" />
+                <figcaption class="phone-label">Notifications</figcaption>
+              </figure>
             </div>
           </div>
 
