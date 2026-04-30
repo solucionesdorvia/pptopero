@@ -45,7 +45,7 @@ python3 -m http.server 5500
 
 ## Stack
 
-- Cormorant Garamond (display) · Outfit (body) · DM Mono (mono/labels) — Google Fonts
+- Cormorant Garamond (display) · Inter (body) · DM Mono (mono/labels) — Google Fonts
 - SVG noise vía `feTurbulence` para textura sutil
 - Glows blur 90px posicionados según tono del slide
 - Transiciones `cubic-bezier(0.22, 1, 0.36, 1)` a 0.55s

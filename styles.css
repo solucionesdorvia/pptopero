@@ -29,7 +29,7 @@
 
   /* Typography */
   --ff-display: "Cormorant Garamond", "Times New Roman", serif;
-  --ff-body: "Outfit", "Helvetica Neue", sans-serif;
+  --ff-body: "Inter", "Helvetica Neue", sans-serif;
   --ff-mono: "DM Mono", "SFMono-Regular", monospace;
 
   /* Motion */
@@ -1870,49 +1870,6 @@ body.is-fullscreen .fs-icon-exit {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.type-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.type-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 18px;
-  border: 1px solid var(--outline-v);
-  border-radius: 12px;
-  background: rgba(20, 31, 46, 0.5);
-}
-
-.type-sample {
-  font-size: 44px;
-  line-height: 1;
-  color: var(--on-primary-c);
-  flex-shrink: 0;
-}
-
-.type-info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.type-name {
-  font-family: var(--ff-display);
-  font-size: 18px;
-  color: var(--text);
-}
-
-.type-use {
-  font-family: var(--ff-mono);
-  font-size: 10px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 /* ============================================================
    SLIDE 10 — FIGMA
    ============================================================ */
@@ -2249,15 +2206,13 @@ body.is-fullscreen .fs-icon-exit {
   .phone-grid-8 {
     grid-template-columns: repeat(2, 1fr);
   }
-  .feat-row,
-  .type-row {
+  .feat-row {
     grid-template-columns: 1fr;
   }
   .brand-grid {
     grid-template-columns: 1fr;
   }
-  .counter,
-  .brand-mark {
+  .counter {
     font-size: 9px;
   }
 }
