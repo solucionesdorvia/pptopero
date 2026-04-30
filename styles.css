@@ -116,12 +116,12 @@ em {
 /* ---------- Slide counter (top right) ---------- */
 .counter {
   position: fixed;
-  top: 26px;
+  top: 22px;
   right: 36px;
   z-index: 200;
   display: inline-flex;
-  align-items: baseline;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
   font-family: var(--ff-mono);
   font-size: 11px;
   letter-spacing: 0.18em;
@@ -131,7 +131,8 @@ em {
 
 .counter-label {
   color: rgba(120, 137, 158, 0.65);
-  margin-right: 4px;
+  margin-left: 6px;
+  margin-right: 2px;
 }
 
 #counterCurrent {
@@ -141,6 +142,52 @@ em {
 
 .counter-divider {
   color: var(--outline);
+}
+
+/* Fullscreen toggle button */
+.fs-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  border: 1px solid var(--outline-v);
+  background: rgba(20, 31, 46, 0.5);
+  margin-right: 4px;
+  transition:
+    color 0.3s var(--ease-luxe),
+    border-color 0.3s var(--ease-luxe),
+    background 0.3s var(--ease-luxe),
+    transform 0.3s var(--ease-luxe);
+}
+
+.fs-btn:hover {
+  color: var(--on-primary-c);
+  border-color: rgba(187, 169, 120, 0.4);
+  background: rgba(187, 169, 120, 0.08);
+  transform: translateY(-1px);
+}
+
+.fs-btn:active {
+  transform: translateY(0);
+}
+
+.fs-icon {
+  display: block;
+}
+
+.fs-icon-exit {
+  display: none;
+}
+
+body.is-fullscreen .fs-icon-enter {
+  display: none;
+}
+
+body.is-fullscreen .fs-icon-exit {
+  display: block;
 }
 
 /* ---------- Top header (slide kicker, top left) ---------- */

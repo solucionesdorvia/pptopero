@@ -23,6 +23,7 @@ python3 -m http.server 5500
 | --- | --- |
 | Avanzar | `→`  ·  `Space`  ·  `PageDown` |
 | Retroceder | `←`  ·  `PageUp` |
+| Pantalla completa | `F` (o el botón arriba a la derecha) |
 | Volver al inicio | `Esc` |
 | Ir al primero / último | `Home` / `End` |
 | Touch | swipe horizontal |

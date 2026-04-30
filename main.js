@@ -15,6 +15,7 @@
   const dotsWrap = document.getElementById('dots');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
+  const fsBtn = document.getElementById('fsBtn');
   const topHeader = document.querySelector('.top-header');
   const topHeaderNum = document.getElementById('topHeaderNum');
   const topHeaderKicker = document.getElementById('topHeaderKicker');
@@ -76,6 +77,56 @@
   prevBtn.addEventListener('click', prevSlide);
   nextBtn.addEventListener('click', nextSlide);
 
+  // ---------- Fullscreen ----------
+  function isFullscreen() {
+    return Boolean(
+      document.fullscreenElement ||
+      document.webkitFullscreenElement ||
+      document.msFullscreenElement
+    );
+  }
+
+  function enterFullscreen() {
+    const el = document.documentElement;
+    const req =
+      el.requestFullscreen ||
+      el.webkitRequestFullscreen ||
+      el.msRequestFullscreen;
+    if (req) req.call(el);
+  }
+
+  function exitFullscreen() {
+    const exit =
+      document.exitFullscreen ||
+      document.webkitExitFullscreen ||
+      document.msExitFullscreen;
+    if (exit) exit.call(document);
+  }
+
+  function toggleFullscreen() {
+    if (isFullscreen()) exitFullscreen();
+    else enterFullscreen();
+  }
+
+  function syncFullscreenState() {
+    document.body.classList.toggle('is-fullscreen', isFullscreen());
+    if (fsBtn) {
+      fsBtn.setAttribute(
+        'aria-label',
+        isFullscreen() ? 'Salir de pantalla completa' : 'Pantalla completa'
+      );
+      fsBtn.setAttribute(
+        'title',
+        isFullscreen() ? 'Salir de pantalla completa (F)' : 'Pantalla completa (F)'
+      );
+    }
+  }
+
+  if (fsBtn) fsBtn.addEventListener('click', toggleFullscreen);
+  document.addEventListener('fullscreenchange', syncFullscreenState);
+  document.addEventListener('webkitfullscreenchange', syncFullscreenState);
+  document.addEventListener('msfullscreenchange', syncFullscreenState);
+
   // ---------- Keyboard ----------
   document.addEventListener('keydown', (e) => {
     switch (e.key) {
@@ -102,6 +153,11 @@
       case 'Escape':
         e.preventDefault();
         reset();
+        break;
+      case 'f':
+      case 'F':
+        e.preventDefault();
+        toggleFullscreen();
         break;
     }
   });
