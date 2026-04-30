@@ -32,8 +32,8 @@ python3 -m http.server 5500
 ## Slides
 
 1. **Portada** — logo, marca y equipo
-2. **Introducción** — copy + stats + preview de pantallas
-3. **Problemática** — 4 cards + barra de solución
+2. **Problemática** — 4 cards + barra de solución
+3. **Solución** — copy + stats + preview de pantallas
 4. **Organización / Scrum** — sprints, ceremonias, roles, herramientas
 5. **Arquitectura MVC** — capas + ejemplo en código
 6. **Modelo de datos / DER** — diagrama entidad-relación + entidades + relaciones
