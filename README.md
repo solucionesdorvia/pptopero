@@ -37,9 +37,9 @@ python3 -m http.server 5500
 4. **Organización / Scrum** — sprints, ceremonias, roles, herramientas
 5. **Arquitectura MVC** — capas + ejemplo en código
 6. **Modelo de datos / DER** — diagrama entidad-relación + entidades + relaciones
-7. **Autenticación JWT** — flow + roles + SecurityConfig + 403
-8. **Swagger / OpenAPI** — 4 paneles de endpoints + summary
-9. **Manual de marca** — logo, swatches, tipografía
+7. **Arquitectura · Visión general** — diagrama end-to-end + pilares + deploy
+8. **Autenticación JWT** — flow + roles + SecurityConfig + 403
+9. **Manual de marca** — logo y paleta
 10. **Figma** — 8 phone mocks + features + flows por rol
 11. **Cierre** — pregunta y links
 

@@ -1590,149 +1590,130 @@ body.is-fullscreen .fs-icon-exit {
 .sec-locked { color: var(--on-primary-c); border: 1px solid rgba(187, 169, 120, 0.3); background: rgba(187, 169, 120, 0.08); }
 
 /* ============================================================
-   SLIDE 08 — SWAGGER
+   SLIDE 07 — ARQUITECTURA · VISIÓN GENERAL
    ============================================================ */
-.swagger-grid {
+.archview {
+  gap: 24px;
+}
+
+.archview-grid {
   display: grid;
-  grid-template-columns: 1fr 1.45fr 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 14px;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 36px;
   align-items: stretch;
+  min-height: 0;
+  min-width: 0;
 }
 
-.swg-panel {
-  border: 1px solid var(--outline-v);
-  border-radius: 12px;
-  background: rgba(20, 31, 46, 0.5);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-}
-
-.swg-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--outline-v);
-  background: rgba(20, 31, 46, 0.7);
-}
-
-.swg-title {
-  font-family: var(--ff-display);
-  font-weight: 500;
-  font-size: 16px;
-  color: var(--text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.swg-count {
-  font-family: var(--ff-mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  color: var(--on-primary-c);
-  padding: 2px 8px;
-  border: 1px solid rgba(187, 169, 120, 0.3);
-  border-radius: 4px;
-}
-
-.endpoints {
-  list-style: none;
+.archview-figure {
   margin: 0;
-  padding: 6px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.endpoints li {
-  display: grid;
-  grid-template-columns: 56px 1fr auto;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 10px;
-  border-radius: 6px;
-  font-family: var(--ff-mono);
-  font-size: 11px;
-  transition: background 0.25s var(--ease-luxe);
-}
-
-.endpoints li:hover {
-  background: rgba(187, 169, 120, 0.05);
-}
-
-.endpoints .m {
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  padding: 3px 6px;
-  border-radius: 4px;
-  text-align: center;
-}
-.endpoints .m.get { color: var(--m-get); border: 1px solid rgba(126, 200, 160, 0.35); background: rgba(126, 200, 160, 0.08); }
-.endpoints .m.post { color: var(--m-post); border: 1px solid rgba(107, 148, 170, 0.35); background: rgba(107, 148, 170, 0.08); }
-.endpoints .m.put { color: var(--m-put); border: 1px solid rgba(187, 169, 120, 0.35); background: rgba(187, 169, 120, 0.08); }
-.endpoints .m.delete { color: var(--m-delete); border: 1px solid rgba(176, 96, 96, 0.35); background: rgba(176, 96, 96, 0.08); }
-.endpoints .m.patch { color: var(--m-patch); border: 1px solid rgba(136, 120, 192, 0.35); background: rgba(136, 120, 192, 0.08); }
-
-.endpoints .path {
-  color: var(--text);
-  font-size: 11.5px;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.endpoints .lock {
-  font-size: 11px;
-  opacity: 0.65;
-}
-
-/* Summary box */
-.swg-summary {
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(20, 31, 46, 0.6), rgba(7, 14, 26, 0.7));
+  border: 1px solid var(--outline-v);
+  box-shadow:
+    0 0 0 6px rgba(107, 148, 170, 0.04),
+    0 24px 56px -20px rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 28px;
-  padding: 18px 28px;
-  border: 1px solid rgba(187, 169, 120, 0.25);
-  background: rgba(187, 169, 120, 0.05);
-  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
 }
 
-.swg-sum-cell {
+.archview-figure::before {
+  content: "ARCH · v1";
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.archview-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.archview-aside {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4px;
+  gap: 18px;
+  min-width: 0;
 }
 
-.swg-sum-num {
+.archview-pillars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.archview-pillars li {
+  display: grid;
+  grid-template-columns: 28px auto 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 14px;
+  border: 1px solid var(--outline-v);
+  border-radius: 10px;
+  background: rgba(20, 31, 46, 0.5);
+  transition: border-color 0.3s var(--ease-luxe);
+}
+
+.archview-pillars li:hover {
+  border-color: rgba(107, 148, 170, 0.45);
+}
+
+.pillar-num {
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  color: var(--secondary);
+}
+
+.pillar-name {
   font-family: var(--ff-display);
-  font-weight: 600;
-  font-size: 56px;
-  line-height: 1;
-  color: var(--on-primary-c);
-  letter-spacing: -0.02em;
+  font-size: 22px;
+  color: var(--text);
+  letter-spacing: 0.01em;
+  line-height: 1.1;
 }
 
-.swg-sum-lbl {
+.pillar-desc {
   font-family: var(--ff-mono);
   font-size: 10px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--muted);
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.swg-sum-sep {
-  width: 1px;
-  height: 50px;
-  background: var(--outline);
+.archview-deploy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--outline-v);
+}
+
+.archview-deploy-label {
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2px;
 }
 
 /* ============================================================
@@ -2183,12 +2164,10 @@ body.is-fullscreen .fs-icon-exit {
   .scrum-grid,
   .arch-grid,
   .jwt-grid,
-  .figma-grid {
+  .figma-grid,
+  .archview-grid {
     grid-template-columns: 1fr;
     gap: 24px;
-  }
-  .swagger-grid {
-    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -2198,9 +2177,6 @@ body.is-fullscreen .fs-icon-exit {
     --pad-y: 26px;
   }
   .problem-grid {
-    grid-template-columns: 1fr;
-  }
-  .swagger-grid {
     grid-template-columns: 1fr;
   }
   .phone-grid-8 {

@@ -434,8 +434,62 @@
       </div>
     </section>
 
-    <!-- ========= SLIDE 07 — JWT ========= -->
-    <section class="slide" data-slide="7" data-tone="violet" data-kicker="Autenticación · JWT">
+    <!-- ========= SLIDE 07 — ARQUITECTURA GENERAL ========= -->
+    <section class="slide" data-slide="7" data-tone="blue" data-kicker="Arquitectura · Visión general">
+      <div class="glow glow-blue-1"></div>
+      <div class="glow glow-violet-2"></div>
+
+      <div class="slide-inner archview">
+        <div class="archview-grid">
+          <figure class="archview-figure">
+            <img src="./assets/arch-diagram.png" alt="Diagrama de arquitectura completo de OPERO" loading="lazy" />
+          </figure>
+
+          <aside class="archview-aside">
+            <h3 class="block-title">
+              <span class="block-tag">End-to-end</span>
+              Cliente, API,<br />
+              <em>datos y deploy.</em>
+            </h3>
+
+            <ul class="archview-pillars">
+              <li>
+                <span class="pillar-num">01</span>
+                <span class="pillar-name">Cliente Mobile</span>
+                <span class="pillar-desc">React Native · MVC · offline</span>
+              </li>
+              <li>
+                <span class="pillar-num">02</span>
+                <span class="pillar-name">API Gateway</span>
+                <span class="pillar-desc">Spring Security · JWT · HTTPS</span>
+              </li>
+              <li>
+                <span class="pillar-num">03</span>
+                <span class="pillar-name">Backend</span>
+                <span class="pillar-desc">Controllers · Services · Repos</span>
+              </li>
+              <li>
+                <span class="pillar-num">04</span>
+                <span class="pillar-name">Datos</span>
+                <span class="pillar-desc">PostgreSQL · 4 entidades</span>
+              </li>
+            </ul>
+
+            <div class="archview-deploy">
+              <span class="archview-deploy-label">Deploy</span>
+              <div class="rel-list">
+                <span class="rel"><b>GitHub</b> · GitFlow</span>
+                <span class="rel"><b>Vercel</b> · CI/CD pipeline</span>
+                <span class="rel"><b>Railway</b> · server principal</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SLIDE 08 — JWT ========= -->
+    <section class="slide" data-slide="8" data-tone="violet" data-kicker="Autenticación · JWT">
       <div class="glow glow-violet-1"></div>
       <div class="glow glow-violet-2"></div>
 
@@ -530,97 +584,11 @@
               </div>
             </div>
 
-            <pre class="code-block code-error"><code><span class="c-method delete">DELETE</span> <span class="c-path">/api/incidents/5</span>
-<span class="c-arrow">→</span> token: <span class="c-cls">STUDENT</span> role
+            <pre class="code-block code-error"><code><span class="c-method get">GET</span> <span class="c-path">/api/departments</span>
+<span class="c-arrow">→</span> token: <span class="c-cls">USER</span> role
 <span class="c-arrow">→</span> Filter: token válido <span class="c-ok">✓</span>
 <span class="c-arrow">→</span> SecurityConfig: rol insuficiente
 <span class="c-status err">403 Forbidden</span> <span class="c-fail">✗</span></code></pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========= SLIDE 08 — SWAGGER / OPENAPI ========= -->
-    <section class="slide" data-slide="8" data-tone="blue" data-kicker="Swagger · OpenAPI">
-      <div class="glow glow-blue-1"></div>
-      <div class="glow glow-gold-1"></div>
-
-      <div class="slide-inner swagger">
-
-        <div class="swagger-grid">
-          <article class="swg-panel">
-            <header class="swg-head">
-              <span class="swg-title">Auth</span>
-              <span class="swg-count">3</span>
-            </header>
-            <ul class="endpoints">
-              <li><span class="m post">POST</span><span class="path">/auth/login</span></li>
-              <li><span class="m post">POST</span><span class="path">/auth/register</span></li>
-              <li><span class="m get">GET</span><span class="path">/auth/me</span><span class="lock">🔒</span></li>
-            </ul>
-          </article>
-
-          <article class="swg-panel">
-            <header class="swg-head">
-              <span class="swg-title">Incidents</span>
-              <span class="swg-count">10</span>
-            </header>
-            <ul class="endpoints">
-              <li><span class="m post">POST</span><span class="path">/incidents</span><span class="lock">🔒</span></li>
-              <li><span class="m get">GET</span><span class="path">/incidents</span><span class="lock">🔒</span></li>
-              <li><span class="m get">GET</span><span class="path">/incidents/{id}</span><span class="lock">🔒</span></li>
-              <li><span class="m put">PUT</span><span class="path">/incidents/{id}</span><span class="lock">🔒</span></li>
-              <li><span class="m delete">DELETE</span><span class="path">/incidents/{id}</span><span class="lock">🔒</span></li>
-              <li><span class="m patch">PATCH</span><span class="path">/incidents/{id}/status</span><span class="lock">🔒</span></li>
-              <li><span class="m patch">PATCH</span><span class="path">/incidents/{id}/assign</span><span class="lock">🔒</span></li>
-              <li><span class="m patch">PATCH</span><span class="path">/incidents/{id}/priority</span><span class="lock">🔒</span></li>
-              <li><span class="m patch">PATCH</span><span class="path">/incidents/{id}/department</span><span class="lock">🔒</span></li>
-              <li><span class="m get">GET</span><span class="path">/incidents/{id}/history</span><span class="lock">🔒</span></li>
-            </ul>
-          </article>
-
-          <article class="swg-panel">
-            <header class="swg-head">
-              <span class="swg-title">Users</span>
-              <span class="swg-count">6</span>
-            </header>
-            <ul class="endpoints">
-              <li><span class="m get">GET</span><span class="path">/users/me</span><span class="lock">🔒</span></li>
-              <li><span class="m put">PUT</span><span class="path">/users/me</span><span class="lock">🔒</span></li>
-              <li><span class="m get">GET</span><span class="path">/users</span><span class="lock">🔒</span></li>
-              <li><span class="m get">GET</span><span class="path">/users/{id}</span><span class="lock">🔒</span></li>
-              <li><span class="m put">PUT</span><span class="path">/users/{id}</span><span class="lock">🔒</span></li>
-              <li><span class="m delete">DELETE</span><span class="path">/users/{id}</span><span class="lock">🔒</span></li>
-            </ul>
-          </article>
-
-          <article class="swg-panel">
-            <header class="swg-head">
-              <span class="swg-title">Departments</span>
-              <span class="swg-count">3</span>
-            </header>
-            <ul class="endpoints">
-              <li><span class="m get">GET</span><span class="path">/departments</span><span class="lock">🔒</span></li>
-              <li><span class="m get">GET</span><span class="path">/departments/{id}</span><span class="lock">🔒</span></li>
-              <li><span class="m put">PUT</span><span class="path">/departments/{id}</span><span class="lock">🔒</span></li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="swg-summary">
-          <div class="swg-sum-cell">
-            <span class="swg-sum-num">25</span>
-            <span class="swg-sum-lbl">Total endpoints</span>
-          </div>
-          <span class="swg-sum-sep"></span>
-          <div class="swg-sum-cell">
-            <span class="swg-sum-num">3</span>
-            <span class="swg-sum-lbl">Públicos</span>
-          </div>
-          <span class="swg-sum-sep"></span>
-          <div class="swg-sum-cell">
-            <span class="swg-sum-num">22</span>
-            <span class="swg-sum-lbl">Con JWT</span>
           </div>
         </div>
       </div>
