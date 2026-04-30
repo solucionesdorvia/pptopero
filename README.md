@@ -35,11 +35,12 @@ python3 -m http.server 5500
 3. **Problemática** — 4 cards + barra de solución
 4. **Organización / Scrum** — sprints, ceremonias, roles, herramientas
 5. **Arquitectura MVC** — capas + ejemplo en código
-6. **Autenticación JWT** — flow + roles + SecurityConfig + 403
-7. **Swagger / OpenAPI** — 4 paneles de endpoints + summary
-8. **Manual de marca** — logo, swatches, tipografía
-9. **Figma** — 8 phone mocks + features + flows por rol
-10. **Cierre** — pregunta y links
+6. **Modelo de datos / DER** — diagrama entidad-relación + entidades + relaciones
+7. **Autenticación JWT** — flow + roles + SecurityConfig + 403
+8. **Swagger / OpenAPI** — 4 paneles de endpoints + summary
+9. **Manual de marca** — logo, swatches, tipografía
+10. **Figma** — 8 phone mocks + features + flows por rol
+11. **Cierre** — pregunta y links
 
 ## Stack
 

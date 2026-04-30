@@ -23,7 +23,7 @@
     <span class="counter-label">SLIDE</span>
     <span id="counterCurrent">01</span>
     <span class="counter-divider">/</span>
-    <span id="counterTotal">10</span>
+    <span id="counterTotal">11</span>
   </div>
 
   <!-- Top header (slide kicker) -->
@@ -384,8 +384,70 @@
       </div>
     </section>
 
-    <!-- ========= SLIDE 06 — JWT ========= -->
-    <section class="slide" data-slide="6" data-tone="violet" data-kicker="Autenticación · JWT">
+    <!-- ========= SLIDE 06 — MODELO DE DATOS / DER ========= -->
+    <section class="slide" data-slide="6" data-tone="blue" data-kicker="Modelo de datos · DER">
+      <div class="glow glow-blue-1"></div>
+      <div class="glow glow-violet-2"></div>
+
+      <div class="slide-inner der">
+        <div class="der-grid">
+          <figure class="der-figure">
+            <img src="./assets/der.png" alt="Diagrama entidad-relación de OPERO" loading="lazy" />
+          </figure>
+
+          <aside class="der-aside">
+            <h3 class="block-title">
+              <span class="block-tag">DER</span>
+              Cuatro entidades.<br />
+              <em>Un modelo claro.</em>
+            </h3>
+
+            <p class="lead small">
+              Esquema relacional con integridad referencial. Roles enumerados,
+              usuarios polimórficos por rol, departamentos jerárquicos e
+              incidentes con ciclo de vida explícito.
+            </p>
+
+            <ul class="der-entities">
+              <li>
+                <span class="ent-num">01</span>
+                <span class="ent-name">Roles</span>
+                <span class="ent-desc">Student · Professor · Manager · Worker</span>
+              </li>
+              <li>
+                <span class="ent-num">02</span>
+                <span class="ent-name">Users</span>
+                <span class="ent-desc">Auth · perfil · departamento</span>
+              </li>
+              <li>
+                <span class="ent-num">03</span>
+                <span class="ent-name">Departments</span>
+                <span class="ent-desc">Mantenimiento · Redes · etc.</span>
+              </li>
+              <li>
+                <span class="ent-num">04</span>
+                <span class="ent-name">Incidents</span>
+                <span class="ent-desc">Status · priority · assignee</span>
+              </li>
+            </ul>
+
+            <div class="der-rels">
+              <span class="der-rels-label">Relaciones</span>
+              <div class="rel-list">
+                <span class="rel"><b>USERS</b> classifies <b>ROLES</b></span>
+                <span class="rel"><b>DEPTS</b> employs <b>USERS</b></span>
+                <span class="rel"><b>USERS</b> reports <b>INCIDENTS</b></span>
+                <span class="rel"><b>USERS</b> assigned to fix <b>INCIDENTS</b></span>
+                <span class="rel"><b>DEPTS</b> responsible for <b>INCIDENTS</b></span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SLIDE 07 — JWT ========= -->
+    <section class="slide" data-slide="7" data-tone="violet" data-kicker="Autenticación · JWT">
       <div class="glow glow-violet-1"></div>
       <div class="glow glow-violet-2"></div>
 
@@ -490,8 +552,8 @@
       </div>
     </section>
 
-    <!-- ========= SLIDE 07 — SWAGGER / OPENAPI ========= -->
-    <section class="slide" data-slide="7" data-tone="blue" data-kicker="Swagger · OpenAPI">
+    <!-- ========= SLIDE 08 — SWAGGER / OPENAPI ========= -->
+    <section class="slide" data-slide="8" data-tone="blue" data-kicker="Swagger · OpenAPI">
       <div class="glow glow-blue-1"></div>
       <div class="glow glow-gold-1"></div>
 
@@ -576,8 +638,8 @@
       </div>
     </section>
 
-    <!-- ========= SLIDE 08 — MANUAL DE MARCA ========= -->
-    <section class="slide" data-slide="8" data-tone="gold" data-kicker="Manual de marca">
+    <!-- ========= SLIDE 09 — MANUAL DE MARCA ========= -->
+    <section class="slide" data-slide="9" data-tone="gold" data-kicker="Manual de marca">
       <div class="glow glow-gold-1"></div>
       <div class="glow glow-gold-2"></div>
 
@@ -656,8 +718,8 @@
       </div>
     </section>
 
-    <!-- ========= SLIDE 09 — FIGMA ========= -->
-    <section class="slide" data-slide="9" data-tone="blue" data-kicker="Figma · Diseño UI/UX">
+    <!-- ========= SLIDE 10 — FIGMA ========= -->
+    <section class="slide" data-slide="10" data-tone="blue" data-kicker="Figma · Diseño UI/UX">
       <div class="glow glow-blue-1"></div>
       <div class="glow glow-violet-2"></div>
 
@@ -750,8 +812,8 @@
       </div>
     </section>
 
-    <!-- ========= SLIDE 10 — CIERRE ========= -->
-    <section class="slide" data-slide="10" data-tone="gold" data-kicker="Cierre">
+    <!-- ========= SLIDE 11 — CIERRE ========= -->
+    <section class="slide" data-slide="11" data-tone="gold" data-kicker="Cierre">
       <div class="glow glow-gold-1"></div>
       <div class="glow glow-gold-2"></div>
 
