@@ -677,7 +677,7 @@ body.is-fullscreen .fs-icon-exit {
 .stat-num {
   font-family: var(--ff-display);
   font-weight: 500;
-  font-size: 44px;
+  font-size: 64px;
   line-height: 1;
   color: var(--on-primary-c);
   letter-spacing: -0.02em;
@@ -685,13 +685,13 @@ body.is-fullscreen .fs-icon-exit {
 
 .stat-plus {
   color: var(--primary-dim);
-  font-size: 30px;
+  font-size: 38px;
   vertical-align: super;
 }
 
 .stat-label {
   font-family: var(--ff-mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);
@@ -792,17 +792,18 @@ body.is-fullscreen .fs-icon-exit {
 .problem-card h3 {
   font-family: var(--ff-display);
   font-weight: 500;
-  font-size: 24px;
-  line-height: 1.1;
+  font-size: 28px;
+  line-height: 1.05;
   margin: 0;
   color: var(--text);
 }
 
 .problem-card p {
   margin: 0;
-  font-size: 14px;
+  font-size: 14.5px;
   color: var(--muted);
-  line-height: 1.55;
+  line-height: 1.5;
+  margin-top: 4px;
 }
 
 .solution-bar {
@@ -1041,7 +1042,8 @@ body.is-fullscreen .fs-icon-exit {
 
 .role-name {
   font-family: var(--ff-display);
-  font-size: 18px;
+  font-size: 22px;
+  line-height: 1.1;
   color: var(--text);
 }
 
@@ -1355,9 +1357,10 @@ body.is-fullscreen .fs-icon-exit {
 
 .ent-name {
   font-family: var(--ff-display);
-  font-size: 17px;
+  font-size: 22px;
   color: var(--text);
   letter-spacing: 0.01em;
+  line-height: 1.1;
 }
 
 .ent-desc {
@@ -1712,7 +1715,7 @@ body.is-fullscreen .fs-icon-exit {
 .swg-sum-num {
   font-family: var(--ff-display);
   font-weight: 600;
-  font-size: 38px;
+  font-size: 56px;
   line-height: 1;
   color: var(--on-primary-c);
   letter-spacing: -0.02em;
@@ -1728,7 +1731,7 @@ body.is-fullscreen .fs-icon-exit {
 
 .swg-sum-sep {
   width: 1px;
-  height: 36px;
+  height: 50px;
   background: var(--outline);
 }
 
