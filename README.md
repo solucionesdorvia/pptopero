@@ -35,9 +35,9 @@ python3 -m http.server 5500
 2. **Problemática** — 4 cards + barra de solución
 3. **Solución** — copy + stats + preview de pantallas
 4. **Organización / Scrum** — sprints, ceremonias, roles, herramientas
-5. **Arquitectura MVC** — capas + ejemplo en código
-6. **Modelo de datos / DER** — diagrama entidad-relación + entidades + relaciones
-7. **Arquitectura · Visión general** — diagrama end-to-end + pilares + deploy
+5. **Arquitectura · Visión general** — diagrama end-to-end + pilares + deploy
+6. **Arquitectura MVC** — capas + ejemplo en código
+7. **Modelo de datos / DER** — diagrama entidad-relación + entidades + relaciones
 8. **Autenticación JWT** — flow + roles + SecurityConfig + 403
 9. **Manual de marca** — logo y paleta
 10. **Figma** — 8 phone mocks + features + flows por rol
