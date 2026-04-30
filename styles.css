@@ -1824,7 +1824,7 @@ body.is-fullscreen .fs-icon-exit {
 .brand-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 16px;
 }
 
 .brand-row-grid {
@@ -1843,6 +1843,46 @@ body.is-fullscreen .fs-icon-exit {
 .brand-section.fondos { grid-column: span 4; }
 .brand-section.primario { grid-column: span 3; }
 .brand-section.acentos { grid-column: span 3; }
+
+/* Função en la UI · presentation cheat sheet */
+.brand-functions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--outline-v);
+}
+
+.func-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.func-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 14px 7px 11px;
+  border: 1px solid var(--outline-v);
+  border-radius: 99px;
+  background: rgba(20, 31, 46, 0.5);
+  font-family: var(--ff-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.func-pill::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--dot);
+  box-shadow: 0 0 8px var(--dot);
+  flex-shrink: 0;
+}
 
 .swatch-row {
   display: grid;
