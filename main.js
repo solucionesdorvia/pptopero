@@ -195,3 +195,136 @@
   // Initial render
   render();
 })();
+
+/* ============================================================
+   Pan + zoom for the architecture diagram (slide 05)
+   ============================================================ */
+(() => {
+  const wrap = document.getElementById('archZoomWrap');
+  const img = document.getElementById('archZoomImg');
+  if (!wrap || !img) return;
+
+  const MIN = 1;
+  const MAX = 5;
+  const STEP = 0.18;
+
+  let scale = 1;
+  let tx = 0;
+  let ty = 0;
+
+  let dragging = false;
+  let startX = 0;
+  let startY = 0;
+  let startTx = 0;
+  let startTy = 0;
+
+  function clamp(v, min, max) {
+    return Math.max(min, Math.min(max, v));
+  }
+
+  function apply() {
+    img.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+  }
+
+  function reset() {
+    scale = 1;
+    tx = 0;
+    ty = 0;
+    apply();
+  }
+
+  function setScaleAt(newScale, clientX, clientY) {
+    newScale = clamp(newScale, MIN, MAX);
+    if (newScale === scale) return;
+
+    const rect = wrap.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = (clientX != null ? clientX : cx) - cx;
+    const dy = (clientY != null ? clientY : cy) - cy;
+
+    // Keep the point under the cursor stationary across zoom
+    const ratio = newScale / scale;
+    tx = dx - (dx - tx) * ratio;
+    ty = dy - (dy - ty) * ratio;
+
+    // When fully zoomed out, recenter
+    if (newScale === MIN) {
+      tx = 0;
+      ty = 0;
+    }
+
+    scale = newScale;
+    apply();
+  }
+
+  // Wheel zoom
+  wrap.addEventListener(
+    'wheel',
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const factor = e.deltaY < 0 ? 1 + STEP : 1 - STEP;
+      setScaleAt(scale * factor, e.clientX, e.clientY);
+    },
+    { passive: false }
+  );
+
+  // Drag pan (pointer events cover both mouse and single-finger touch)
+  wrap.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    wrap.classList.add('is-grabbing');
+    startX = e.clientX;
+    startY = e.clientY;
+    startTx = tx;
+    startTy = ty;
+    try {
+      wrap.setPointerCapture(e.pointerId);
+    } catch (_) {}
+  });
+
+  wrap.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    tx = startTx + (e.clientX - startX);
+    ty = startTy + (e.clientY - startY);
+    apply();
+  });
+
+  function stopDrag(e) {
+    if (!dragging) return;
+    dragging = false;
+    wrap.classList.remove('is-grabbing');
+    try {
+      wrap.releasePointerCapture(e.pointerId);
+    } catch (_) {}
+  }
+
+  wrap.addEventListener('pointerup', stopDrag);
+  wrap.addEventListener('pointercancel', stopDrag);
+  wrap.addEventListener('pointerleave', stopDrag);
+
+  // Double-click to reset
+  wrap.addEventListener('dblclick', (e) => {
+    e.preventDefault();
+    reset();
+  });
+
+  // Buttons
+  document.querySelectorAll('[data-zoom]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const action = btn.dataset.zoom;
+      if (action === 'in') setScaleAt(scale * (1 + STEP * 2));
+      else if (action === 'out') setScaleAt(scale * (1 - STEP * 2));
+      else if (action === 'reset') reset();
+    });
+  });
+
+  // Reset zoom when the slide is left, so it's fresh on next visit
+  const slide = wrap.closest('.slide');
+  if (slide) {
+    const observer = new MutationObserver(() => {
+      if (!slide.classList.contains('is-active')) reset();
+    });
+    observer.observe(slide, { attributes: true, attributeFilter: ['class'] });
+  }
+})();

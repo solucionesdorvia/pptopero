@@ -303,7 +303,15 @@
       <div class="slide-inner archview">
         <div class="archview-grid">
           <figure class="archview-figure">
-            <img src="./assets/arch-diagram.png" alt="Diagrama de arquitectura completo de OPERO" loading="lazy" />
+            <div class="zoom-wrap" id="archZoomWrap">
+              <img class="zoom-img" id="archZoomImg" src="./assets/arch-diagram.png" alt="Diagrama de arquitectura completo de OPERO" loading="lazy" draggable="false" />
+            </div>
+            <div class="zoom-hint">Scroll para zoom · arrastrá para mover</div>
+            <div class="zoom-controls" role="group" aria-label="Controles de zoom">
+              <button type="button" class="zoom-btn" data-zoom="out" aria-label="Alejar">−</button>
+              <button type="button" class="zoom-btn" data-zoom="reset" aria-label="Reiniciar zoom">⟲</button>
+              <button type="button" class="zoom-btn" data-zoom="in" aria-label="Acercar">+</button>
+            </div>
           </figure>
 
           <aside class="archview-aside">
