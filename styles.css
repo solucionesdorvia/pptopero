@@ -959,39 +959,6 @@ body.is-fullscreen .fs-icon-exit {
   text-transform: uppercase;
 }
 
-/* Ceremonies */
-.ceremonies {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.cer-label {
-  font-family: var(--ff-mono);
-  font-size: 10px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.cer-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.cer {
-  font-family: var(--ff-mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text);
-  padding: 7px 14px;
-  border: 1px solid rgba(107, 148, 170, 0.3);
-  border-radius: 99px;
-  background: rgba(107, 148, 170, 0.07);
-}
-
 /* Role cards */
 .role-stack {
   display: flex;
